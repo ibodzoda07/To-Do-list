@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #F3F4F6;
+  color: #333;
+  line-height: 1.6;
+}
+
+.app-container {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* aside */
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 20%;
+    background-color: #ffffff;
+}
+
+.aside {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+}
+
+.user-info {
+
+}
+
+.separator-line {
+
+}
+
+.menu-tasks {
+
+}
+
+.tasks {
+
+}
+
+/* main */
+
+.main-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    min-height: 100vh;
+    margin: 20px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+}
+.togle_theme {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+.add-task-btn{
+    width: 143px;
+    height: 59px;
+    color: #ffffff;
+    background: #000;
+    border: none;
+    border-radius: 10px;
+}
+
+.no-tasks {
+
+}
+
