@@ -1,0 +1,14 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Изучить JavaScript",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "title": "Сделать проект",
+      "completed": true
+    }
+  ]
+}
