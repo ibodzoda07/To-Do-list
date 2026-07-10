@@ -24,8 +24,33 @@ body {
     display: flex;
     flex-direction: column;
     padding: 20px;
-    width: 20%;
+    width: 250px;
     background-color: #ffffff;
+    transition: all 0.5s ease-in-out;
+}
+
+.sidebar.colapse {
+    display: flex;
+    align-items: center;
+    width: 80px;
+    transition: all 0.5s ease-in-out;
+}
+
+.sidebar.colapse .user-info h3,
+.sidebar.colapse .user-info a,
+.sidebar.colapse .sidebar-menu p  {
+    display: none;
+}
+
+.sidebar.colapse #avatar-icon {
+    transition: all 0.8s ease-in-out;
+    width: 48px;
+    height: 48px;
+}
+
+.sidebar.colapse .menu-tasks {
+    justify-content: center;
+
 }
 
 .aside {
@@ -34,7 +59,8 @@ body {
     margin-top: 20px;
 }
 
-.menu-img {
+#menu-button {
+
     width: 48px;
     height: 48px;
     padding: 5px;
@@ -42,7 +68,10 @@ body {
 
 }
 
-.menu-img:hover {
+#menu-button:hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #ccc;
     border-radius: 12px;
 }
@@ -82,9 +111,10 @@ body {
 }
 
 
-.menu-tasks img {
+.menu-icon {
     width: 36px;
     height: 36px;
+    flex-shrink: 0; 
 }
 .menu-tasks p {
     font-size: 18px;
@@ -216,6 +246,7 @@ body {
     flex-direction: row;
     gap: 10px;
     list-style-type: none;
+    cursor: pointer;
 }
 
 
@@ -233,12 +264,19 @@ body {
     margin-top: 15px;
 }
 
-#completed {
-    width: 20px;
-    height: 20px;
+#task-text {
+    flex-grow: 1;
+    text-align: left;
+    margin-left: 15px;
+}
+
+#checkbox {
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     border: 1px solid #ccc;
     cursor: pointer;
+    accent-color: rgb(66, 66, 66);
 }
 
 #description {

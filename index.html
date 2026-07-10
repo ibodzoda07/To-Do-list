@@ -5,15 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
 <body>
     <div class="app-container">
         <aside class="sidebar">
-            <img class="menu-img" src="/assets/menu 1.png" alt="sds">
+            <img id="menu-button" src="/assets/menu 1.png" alt="sds">
             <div class="aside">
                 <div class="user-info">
-                    <img src="/assets/avatar.png" alt="ava">
+                    <img id="avatar-icon" src="/assets/avatar.png" alt="ava">
                     <h3>Jane Doe</h3>
                     <a href="#">janedoe@gmail.com</a>
                 </div>
@@ -21,11 +20,11 @@
                 <hr class="separator-line">
                 <div class="sidebar-menu">
                     <div class="menu-tasks">
-                        <img src="/assets/list-todo 1.png" alt="adsd">
+                        <img class="menu-icon" src="/assets/list-todo 1.png" alt="adsd">
                         <p>My Tasks</p>
                     </div>
                     <div class="menu-tasks">
-                        <img src="/assets/menu settings.png" alt="adsd">
+                        <img class="menu-icon" src="/assets/menu settings.png" alt="adsd">
                         <p>Settings</p>
                     </div>
                 </div>
@@ -37,19 +36,14 @@
                 <nav class="navigation">
                     <h1>My Tasks</h1>
                 </nav>
-                <a class="togle_theme" href="#"><img src="/assets/moon 1.png" alt="moon"></a>
+                <a class="togle_theme" href="#">
+                    <img id="" src="/assets/sun 1.png" alt="sdfs">
+                    <img src="/assets/moon 1.png" alt="moon"></a>
                
                 <div class="container">
                     <form class="search-form">
-                            <input 
-                                type="text" 
-                                name="task-text" 
-                                id="task-input" 
-                                placeholder="Type your task here..." 
-                                required
-                            >
+                            <input type="text" name="task-text" id="task-input" placeholder="Type your task here..." required>
                             <button type="submit" class="add-task-btn">+ Add</button>
-                        
                     </form>
 
                     <div class="no-tasks">
@@ -61,16 +55,16 @@
                     <div class="task-container">
                         <div class="tasks-navigation">
                             <ul class="todo-list">
-                                <li class="active">All |</li>
-                                <li>Active |</li>
-                                <li>Completed</li>
+                                <li id="all">All |</li>
+                                <li id="active">Active |</li>
+                                <li id="completed">Completed</li>
                             </ul>
                             <span class="tasks-left">2 tasks left</span>
                         </div>
 
                         <div class="tasks-list">
-                            <input type="checkbox" name="completed" id="completed">
-                            <input type="text" name="description" id="description">
+                            <input type="checkbox" name="completed" id="checkbox">
+                            <span id="task-text">Learn React</span>
                             <div class="task-actions">
                                 <button type="submit" class="action-btn">
                                     <img class="edit" src="/assets/pencil 1.png" alt="Edit">
@@ -80,30 +74,7 @@
                                 </button>
                             </div>    
                         </div>
-                        <div class="tasks-list">
-                            <input type="checkbox" name="completed" id="completed">
-                            <input type="text" name="description" id="description">
-                            <div class="task-actions">
-                                <button type="submit" class="action-btn">
-                                    <img class="edit" src="/assets/pencil 1.png" alt="Edit">
-                                </button>
-                                <button type="button" class="action-btn">
-                                    <img class="trash" src="/assets/trash 1.png" alt="Delete">
-                                </button>
-                            </div>
-                        </div>
-                        <div class="tasks-list">
-                            <input type="checkbox" name="completed" id="completed">
-                            <input type="text" name="description" id="description">
-                            <div class="task-actions">
-                                <button type="submit" class="action-btn">
-                                    <img class="edit" src="/assets/pencil 1.png" alt="Edit">
-                                </button>
-                                <button type="button" class="action-btn">
-                                    <img class="trash" src="/assets/trash 1.png" alt="Delete">
-                                </button>
-                            </div>
-                        </div>
+                        
                        
                     </div>
                 </div>
@@ -111,4 +82,5 @@
         </main>
     </div>
 </body>
+<script src="script.js"></script>
 </html>
