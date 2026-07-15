@@ -12,6 +12,71 @@ body {
   line-height: 1.6;
 }
 
+
+body.dark-mode {
+    background-color: #172239;
+}
+body.dark-mode .sidebar{
+    background-color: #4A5565;
+    transition: all 0.1s ease-in-out;
+}
+body.dark-mode .user-info h3,
+body.dark-mode  {
+    color: #fcfcfc;
+}
+
+body.dark-mode  #menu-button:hover,
+body.dark-mode  .menu-tasks:hover {
+    transition: all 0.3s ease-in-out;
+    background-color: #F3F4F6;
+    color: #000;
+}
+body.dark-mode .menu-tasks:hover .menu-icon { 
+    transition: all 0.3s ease-in-out;
+    filter: brightness(10); 
+}
+
+body.dark-mode .main-container{
+    background-color: #101828;
+}
+body.dark-mode .main-container h1 {
+    color: #ffffff;
+}
+body.dark-mode .main-container li,span {
+    color: #6A7282;
+}
+
+body.dark-mode .search-form #task-input, 
+body.dark-mode .search-form .add-task-btn {
+    background-color: #1D2939;
+    color: #F3F4F6;
+    border: none;
+    transition: all 0.1s ease;
+}
+
+body.dark-mode .search-form .add-task-btn:hover {
+    background-color: #233144;
+}
+
+body.dark-mode .tasks-list, body.dark-mode #checkbox:not(:checked) {
+    background-color: #1E2939;
+    color: #000;
+    border: none;
+    transition: all 0.1s ease;
+}
+body.dark-mode .task-actions,
+body.dark-mode .menu-tasks img {
+    filter: invert(1);
+}
+
+body.dark-mode #light-mode-btn {
+    display: block;
+}
+body.dark-mode #dark-mode-btn {
+    display: none;
+}
+
+
 .app-container {
     display: flex;
     width: 100%;
@@ -26,14 +91,15 @@ body {
     padding: 20px;
     width: 250px;
     background-color: #ffffff;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.4s ease-in-out;
 }
 
 .sidebar.colapse {
     display: flex;
     align-items: center;
+    overflow:unset;
     width: 80px;
-    transition: all 0.5s ease-in-out;
+
 }
 
 .sidebar.colapse .user-info h3,
@@ -43,13 +109,13 @@ body {
 }
 
 .sidebar.colapse #avatar-icon {
-    transition: all 0.8s ease-in-out;
     width: 48px;
     height: 48px;
 }
 
 .sidebar.colapse .menu-tasks {
     justify-content: center;
+    transition: all 0.4s ease-in-out;
 
 }
 
@@ -60,12 +126,9 @@ body {
 }
 
 #menu-button {
-
     width: 48px;
     height: 48px;
     padding: 5px;
-    transition: all 0.3s ease;
-
 }
 
 #menu-button:hover {
@@ -82,6 +145,15 @@ body {
     align-items: center;
     gap: 10px;
 
+}
+
+.user-info a{
+    color: #99A1AF;
+    text-decoration: none;
+}
+
+.user-info a:active {
+    color: #ffffff;
 }
 
 .separator-line {
@@ -102,7 +174,7 @@ body {
     padding: 5px;
     gap: 25px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
 } 
 
 .menu-tasks:hover {
@@ -131,14 +203,15 @@ body {
 /* main */
 
 .main-content {
-    position: relative;
     display: flex;
     flex-direction: column;
     width: 80%;
     min-height: 100vh;
     margin: 20px;
+
 }
 .main-container {
+    position: relative;
     display: flex;
     flex-direction: column;
     background-color: #fcfcfc;
@@ -146,6 +219,7 @@ body {
     padding: 20px 15px;
     border-radius: 20px;
     height: 100%;
+    transition: all 0.1s ease-in-out;
 }
 
 .navigation {
@@ -155,7 +229,19 @@ body {
     position: absolute;
     top: 20px;
     right: 20px;
+    max-width: 48px;
 }
+
+#dark-mode-btn, #light-mode-btn {
+    width: 48px;
+    height: 48px;
+    /* transition: all 0.3s ease; */
+}
+
+#light-mode-btn {
+    display: none;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -176,6 +262,7 @@ body {
 }
 
 #task-input {
+    font-size: 16px;
     width: 100%;          
     max-width: 519px;
     height: 59px;
@@ -186,24 +273,28 @@ body {
 
 }
 .add-task-btn{
+    font-size: 16px;
     width: 143px;
     height: 59px;
+    padding: 5px 7px ;
     color: #ffffff;
     background: #000;
     border: none;
     border-radius: 10px;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease-in-out;
 }
 
 .add-task-btn:hover {
-    background-color: #242424;
+    background-color: #353535;
     border-radius: 12px;
-    transform: translateY(-2px);
+    transform: scale(1.07);
 }
 
 
 /* no tasks */
-
+.hidden {
+    display: none !important;
+}
 
 .no-tasks {
     display: none;
@@ -211,6 +302,8 @@ body {
     align-items: center;
     margin-top: 35px;
 }
+
+
 .no-tasks img {
     max-width: 350px;
     margin-right: 10px;
@@ -249,6 +342,12 @@ body {
     cursor: pointer;
 }
 
+.todo-list li.active-filter {
+    color: #555555; 
+    font-weight: bold;
+    text-decoration: underline;
+    transition: all 0.2s ease-in-out;
+}
 
 .tasks-list {
     display: flex;
@@ -268,6 +367,10 @@ body {
     flex-grow: 1;
     text-align: left;
     margin-left: 15px;
+}
+.completed-text {
+    text-decoration: line-through;
+    transition: all 0.3s ease;
 }
 
 #checkbox {
@@ -308,7 +411,104 @@ body {
 }
 
 
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+        align-items: center;
+        
+    }
 
+    /* Sidebar */
+    .sidebar {
+        position: fixed;
+        top:unset;
+        bottom: 10px;
+        width: 90%;
+        height: 90px;
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto;
+        padding: 0 15px;
+        border-radius: 30px;
+        box-shadow: 0 0  10px rgb(167, 167, 167);
+        z-index: 10;
+    }
+    #menu-button{
+        display: none;
+    }
+    .aside{
+        display: flex;
+        flex: 1;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+        padding: 3px 10px;
+    }
+    .user-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+
+    }
+    .user-info h3{
+        font-size: 14px;
+    }
+
+    .user-info a {
+        display: none;
+    } 
+     #avatar-icon {
+        height: 40px;
+        width: 40px;
+    }
+    .separator-line {
+        display: none;
+    }
+   
+    .sidebar-menu {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .menu-tasks {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+    }
+    
+    .menu-icon {
+        width: 22px;
+        height: 22px;
+    }
+    .menu-tasks p{ 
+        font-size: 12px;
+        text-wrap: nowrap;
+    }
+
+    
+
+    /* Main container */
+    
+    .main-content {
+        width: 90%;
+        margin: 20px auto;
+        height: auto;
+    }
+    .no-tasks {
+        display: flex;
+        justify-content: center;
+    }
+
+    .no-tasks img {
+        width: 190px;
+    }
+    .no-tasks p {
+        font-size: small;
+    }
+}
 
 
 

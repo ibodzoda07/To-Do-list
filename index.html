@@ -37,8 +37,9 @@
                     <h1>My Tasks</h1>
                 </nav>
                 <a class="togle_theme" href="#">
-                    <img id="" src="/assets/sun 1.png" alt="sdfs">
-                    <img src="/assets/moon 1.png" alt="moon"></a>
+                    <img id="light-mode-btn" src="/assets/sun 1.png" alt="sdfs">
+                    <img id="dark-mode-btn" src="/assets/moon 1.png" alt="moon">
+                </a>
                
                 <div class="container">
                     <form class="search-form">
@@ -52,30 +53,16 @@
                     </div>
 
 
-                    <div class="task-container">
+                    <div class="task-container hidden">
                         <div class="tasks-navigation">
                             <ul class="todo-list">
                                 <li id="all">All |</li>
                                 <li id="active">Active |</li>
                                 <li id="completed">Completed</li>
                             </ul>
-                            <span class="tasks-left">2 tasks left</span>
+                            <span class="tasks-left"></span>
                         </div>
-
-                        <div class="tasks-list">
-                            <input type="checkbox" name="completed" id="checkbox">
-                            <span id="task-text">Learn React</span>
-                            <div class="task-actions">
-                                <button type="submit" class="action-btn">
-                                    <img class="edit" src="/assets/pencil 1.png" alt="Edit">
-                                </button>
-                                <button type="button" class="action-btn">
-                                    <img class="trash" src="/assets/trash 1.png" alt="Delete">
-                                </button>
-                            </div>    
-                        </div>
-                        
-                       
+                        <div id="tasks-wrapper"></div>
                     </div>
                 </div>
             </div>
